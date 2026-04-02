@@ -8,12 +8,15 @@ const Projects = () => {
                 {projects.map((project, index) => (
                     <div key={index} className="border border-gray-800 rounded-xl p-6">
                         <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-                        <p className="text-gray-400 mb-4">{project.description}</p>
-                        <ul className="list-disc list-inside text-gray-300 mb-4">
-                            {project.features.map((feature, i) => (
-                                <li key={i}>{feature}</li>
-                            ))}
-                        </ul>
+                        <p className="text-gray-400 mb-4">{project.subtitle}</p>
+                        <div className="mb-4">
+                            <h4 className="text-sm font-semibold text-gray-400 mb-2">Engineering Focus</h4>
+                            <ul className="list-disc list-inside text-gray-400 space-y-1">
+                                {project.engineering.map((item, i) => (
+                                    <li key={i}>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
                         <div className="flex flex-wrap gap-2 mb-4">
                             {project.techStack.map((tech, i) => (
                                 <span key={i} className="text-sm border border-gray-700 px-2 py-1 rounded">{tech}</span>
